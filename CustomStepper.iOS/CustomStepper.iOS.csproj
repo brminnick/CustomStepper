@@ -116,6 +116,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="RedStepper_iOS.cs" />
+    <Compile Include="StepperColorEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomStepper\CustomStepper.csproj">

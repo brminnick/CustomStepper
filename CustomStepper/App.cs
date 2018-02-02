@@ -11,10 +11,19 @@ namespace CustomStepper
     {
         public StepperPage()
         {
-            Content = new RedStepper
+            var customRenderer = new RedStepper();
+
+            var stepper = new Stepper();
+            StepperColorEffect.SetColorProperty(stepper, Color.Green);
+
+            Content = new StackLayout
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
+                Children ={
+                    customRenderer,
+                    stepper
+                }
             };
         }
     }
