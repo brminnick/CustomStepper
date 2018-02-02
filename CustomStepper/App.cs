@@ -14,13 +14,13 @@ namespace CustomStepper
             Content = new RedStepper
             {
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center
+                VerticalOptions = LayoutOptions.Center,
             };
         }
     }
 
     public class RedStepper : Stepper
     {
-        
+
     }
 }
