@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CustomStepper.StepperPage"
+    xmlns:local="clr-namespace:CustomStepper">
+    
+    <ContentPage.Content>
+        <StackLayout 
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            
+            <local:RedStepper/>
+            <Stepper
+                local:StepperColorEffect.Color="Green"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

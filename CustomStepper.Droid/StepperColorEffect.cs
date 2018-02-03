@@ -16,8 +16,8 @@ namespace CustomStepper.Droid
         {
             if (Element is Stepper element && Control is LinearLayout control)
             {
-                control.GetChildAt(0).Background.SetColorFilter(CustomStepper.StepperColorEffect.GetColorProperty(element).ToAndroid(), PorterDuff.Mode.Multiply);
-                control.GetChildAt(1).Background.SetColorFilter(CustomStepper.StepperColorEffect.GetColorProperty(element).ToAndroid(), PorterDuff.Mode.Multiply);
+                control.GetChildAt(0).Background.SetColorFilter(CustomStepper.StepperColorEffect.GetColor(element).ToAndroid(), PorterDuff.Mode.Multiply);
+                control.GetChildAt(1).Background.SetColorFilter(CustomStepper.StepperColorEffect.GetColor(element).ToAndroid(), PorterDuff.Mode.Multiply);
             }
         }
 

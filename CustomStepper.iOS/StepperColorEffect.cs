@@ -14,7 +14,7 @@ namespace CustomStepper.iOS
         protected override void OnAttached()
         {
             if (Element is Stepper element && Control is UIStepper control)
-                control.TintColor = CustomStepper.StepperColorEffect.GetColorProperty(element).ToUIColor();
+                control.TintColor = CustomStepper.StepperColorEffect.GetColor(element).ToUIColor();
         }
 
         protected override void OnDetached()
