@@ -6,11 +6,12 @@ namespace CustomStepper
 {
     public static class StepperColorEffect
     {
+
         public static readonly BindableProperty ColorProperty =
             BindableProperty.CreateAttached(nameof(Color),
                 typeof(Color),
                 typeof(Stepper),
-                Color.Gray,
+                GetDefaultColor(),
                 propertyChanged: OnStepperColorChanged);
 
         public static Color GetColor(BindableObject view) => (Color)view.GetValue(ColorProperty);
@@ -36,6 +37,19 @@ namespace CustomStepper
 
             foreach (var entryReturnTypeEffect in effectToRemoveList)
                 entry.Effects.Remove(entryReturnTypeEffect);
+        }
+
+        static Color GetDefaultColor()
+        {
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    return Color.Blue;
+                case Device.Android:
+                    return Color.Gray;
+                default:
+                    throw new System.NotSupportedException();
+            }
         }
     }
 
