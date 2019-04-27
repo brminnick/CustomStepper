@@ -5,7 +5,7 @@ using Xamarin.Forms.Platform.iOS;
 
 using CustomStepper.iOS;
 
-[assembly: ResolutionGroupName("CustomStepper")]
+[assembly: ResolutionGroupName(nameof(CustomStepper))]
 [assembly: ExportEffect(typeof(StepperColorEffect), nameof(StepperColorEffect))]
 namespace CustomStepper.iOS
 {
@@ -19,7 +19,7 @@ namespace CustomStepper.iOS
 
         protected override void OnDetached()
         {
-            if (Element is Stepper element && Control is UIStepper control)
+            if (Element is Stepper && Control is UIStepper control)
                 control.TintColor = UIColor.Blue;
         }
     }

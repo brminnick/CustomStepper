@@ -9,10 +9,10 @@ namespace CustomStepper
 
         public static readonly BindableProperty ColorProperty =
             BindableProperty.CreateAttached(nameof(Color),
-                typeof(Color),
-                typeof(Stepper),
-                GetDefaultColor(),
-                propertyChanged: OnStepperColorChanged);
+            typeof(Color),
+            typeof(Stepper),
+            GetDefaultColor(),
+            propertyChanged: OnStepperColorChanged);
 
         public static Color GetColor(BindableObject view) => (Color)view.GetValue(ColorProperty);
 
@@ -55,7 +55,7 @@ namespace CustomStepper
 
     class StepperColorRoutingEffect : RoutingEffect
     {
-        public StepperColorRoutingEffect() : base("CustomStepper.StepperColorEffect")
+        public StepperColorRoutingEffect() : base(nameof(CustomStepper) + "." + nameof(StepperColorEffect))
         {
         }
     }
