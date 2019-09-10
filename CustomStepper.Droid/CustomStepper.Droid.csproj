@@ -43,7 +43,7 @@
         <Reference Include="Mono.Android" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="4.2.0.673161-pre3" />
+        <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
