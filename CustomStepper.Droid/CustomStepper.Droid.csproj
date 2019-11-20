@@ -8,13 +8,16 @@
         <OutputType>Library</OutputType>
         <RootNamespace>CustomStepper.Droid</RootNamespace>
         <AssemblyName>CustomStepper.Droid</AssemblyName>
-        <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
         <AndroidApplication>True</AndroidApplication>
         <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
         <AndroidResgenClass>Resource</AndroidResgenClass>
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <Nullable>enable</Nullable>
+        <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+        <LangVersion>8.0</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
@@ -43,7 +46,7 @@
         <Reference Include="Mono.Android" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
+        <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />

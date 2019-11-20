@@ -6,7 +6,6 @@ namespace CustomStepper
 {
     public static class StepperColorEffect
     {
-
         public static readonly BindableProperty ColorProperty =
             BindableProperty.CreateAttached(nameof(Color),
             typeof(Color),
@@ -22,35 +21,25 @@ namespace CustomStepper
 
         static void UpdateEffect(BindableObject bindable)
         {
-            switch (bindable)
-            {
-                case Stepper stepper:
-                    RemoveEffect(stepper);
-                    stepper.Effects.Add(new StepperColorRoutingEffect());
-                    break;
-            }
+            var stepper = (Stepper)bindable;
+            RemoveEffect(stepper);
+            stepper.Effects.Add(new StepperColorRoutingEffect());
         }
 
         static void RemoveEffect(Stepper entry)
         {
-            var effectToRemoveList = entry.Effects.Where(e => e is StepperColorRoutingEffect).ToList();
+            var effectToRemoveList = entry.Effects.Where(e => e is StepperColorRoutingEffect);
 
             foreach (var entryReturnTypeEffect in effectToRemoveList)
                 entry.Effects.Remove(entryReturnTypeEffect);
         }
 
-        static Color GetDefaultColor()
+        static Color GetDefaultColor() => Device.RuntimePlatform switch
         {
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    return Color.Blue;
-                case Device.Android:
-                    return Color.Gray;
-                default:
-                    throw new System.NotSupportedException();
-            }
-        }
+            Device.iOS => Color.Blue,
+            Device.Android => Color.Gray,
+            _ => throw new System.NotSupportedException(),
+        };
     }
 
     class StepperColorRoutingEffect : RoutingEffect
