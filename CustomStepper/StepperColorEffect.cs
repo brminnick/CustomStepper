@@ -28,7 +28,7 @@ namespace CustomStepper
 
         static void RemoveEffect(Stepper entry)
         {
-            var effectToRemoveList = entry.Effects.Where(e => e is StepperColorRoutingEffect);
+            var effectToRemoveList = entry.Effects.OfType<StepperColorRoutingEffect>();
 
             foreach (var entryReturnTypeEffect in effectToRemoveList)
                 entry.Effects.Remove(entryReturnTypeEffect);
