@@ -8,7 +8,7 @@
         <OutputType>Library</OutputType>
         <RootNamespace>CustomStepper.Droid</RootNamespace>
         <AssemblyName>CustomStepper.Droid</AssemblyName>
-        <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
         <AndroidApplication>True</AndroidApplication>
         <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
         <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -46,7 +46,7 @@
         <Reference Include="Mono.Android" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
@@ -6,6 +6,6 @@
         <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
     </ItemGroup>
 </Project>

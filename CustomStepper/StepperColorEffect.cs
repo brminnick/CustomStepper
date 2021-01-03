@@ -1,17 +1,11 @@
 ﻿using System.Linq;
-
 using Xamarin.Forms;
 
 namespace CustomStepper
 {
     public static class StepperColorEffect
     {
-        public static readonly BindableProperty ColorProperty =
-            BindableProperty.CreateAttached(nameof(Color),
-            typeof(Color),
-            typeof(Stepper),
-            GetDefaultColor(),
-            propertyChanged: OnStepperColorChanged);
+        public static readonly BindableProperty ColorProperty = BindableProperty.CreateAttached(nameof(Color), typeof(Color), typeof(Stepper), GetDefaultColor(), propertyChanged: OnStepperColorChanged);
 
         public static Color GetColor(BindableObject view) => (Color)view.GetValue(ColorProperty);
 

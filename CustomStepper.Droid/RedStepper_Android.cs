@@ -1,11 +1,10 @@
 ﻿using Android.Content;
 using Android.Graphics;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
-
+using Android.OS;
 using CustomStepper;
 using CustomStepper.Droid;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(RedStepper), typeof(RedStepper_Android))]
 namespace CustomStepper.Droid
@@ -22,8 +21,16 @@ namespace CustomStepper.Droid
 
             if (Control != null)
             {
-                Control.GetChildAt(0).Background.SetColorFilter(Xamarin.Forms.Color.Red.ToAndroid(), PorterDuff.Mode.Multiply);
-                Control.GetChildAt(1).Background.SetColorFilter(Xamarin.Forms.Color.Red.ToAndroid(), PorterDuff.Mode.Multiply);
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
+                {
+                    Control.GetChildAt(0)?.Background?.SetColorFilter(new BlendModeColorFilter(Xamarin.Forms.Color.Red.ToAndroid(), BlendMode.SrcAtop));
+                    Control.GetChildAt(0)?.Background?.SetColorFilter(new BlendModeColorFilter(Xamarin.Forms.Color.Red.ToAndroid(), BlendMode.SrcAtop));
+                }
+                else
+                {
+                    Control.GetChildAt(0)?.Background?.SetColorFilter(Xamarin.Forms.Color.Red.ToAndroid(), PorterDuff.Mode.SrcAtop);
+                    Control.GetChildAt(1)?.Background?.SetColorFilter(Xamarin.Forms.Color.Red.ToAndroid(), PorterDuff.Mode.SrcAtop);
+                }
             }
         }
     }
